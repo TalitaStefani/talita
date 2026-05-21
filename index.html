@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ordenarelle | Guirlandas e Escapulários Feitos à Mão</title>
+  <meta name="description" content="Guirlandas e escapulários de porta feitos à mão, personalizados e exclusivos. Faça seu pedido pelo WhatsApp." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* =============================================
+       ORDENARELLE — SITE FINAL
+       Para adicionar fotos, procure por "FOTO:"
+       em qualquer editor de texto e siga as instruções
+       ============================================= */
+
+    :root {
+      --bg: #faf7f2;
+      --cream: #f3ece0;
+      --card: #ffffff;
+      --text: #362e27;
+      --muted: #7a6f64;
+      --green: #68856b;
+      --green-dk: #4d6450;
+      --green-lt: #eaf0e6;
+      --gold: #c8a96e;
+      --gold-lt: #f7eddc;
+      --line: #e4d9cc;
+      --r: 20px;
+      --r-lg: 30px;
+      --sh: 0 12px 40px rgba(54,46,39,.09);
+      --sh-sm: 0 4px 18px rgba(54,46,39,.07);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+
+    img { max-width: 100%; display: block; object-fit: cover; }
+    a { text-decoration: none; color: inherit; }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      line-height: 1.15;
+      font-weight: 600;
+    }
+
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+    /* ---- NAV ---- */
+    .nav-bar {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(250,247,242,.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 20px;
+      height: 70px;
+    }
+    .nav-brand strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600; letter-spacing: .5px;
+    }
+    .nav-brand small {
+      display: block; font-size: .76rem; color: var(--muted);
+      letter-spacing: .6px; text-transform: uppercase; margin-top: 1px;
+    }
+    .nav-links { display: flex; gap: 26px; font-size: .9rem; color: var(--muted); }
+    .nav-links a { transition: color .2s; }
+    .nav-links a:hover { color: var(--green-dk); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green); color: #fff;
+      padding: 10px 22px; border-radius: 999px;
+      font-size: .88rem; font-weight: 600; letter-spacing: .2px;
+      transition: background .2s, transform .2s;
+      box-shadow: 0 4px 16px rgba(104,133,107,.28);
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--green-dk); transform: translateY(-1px); }
+    .nav-cta svg { width: 16px; height: 16px; fill: #fff; flex-shrink: 0; }
+
+    /* ---- BOTÕES ---- */
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 13px 26px; border-radius: 999px;
+      font-family: 'Jost', sans-serif; font-weight: 600; font-size: .93rem;
+      transition: transform .2s, box-shadow .2s, background .2s;
+      cursor: pointer; border: none;
+    }
+    .btn-green {
+      background: var(--green); color: #fff;
+      box-shadow: 0 6px 20px rgba(104,133,107,.28);
+    }
+    .btn-green:hover { background: var(--green-dk); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(77,100,80,.3); }
+    .btn-outline {
+      background: transparent; color: var(--green-dk);
+      border: 1.5px solid var(--green);
+    }
+    .btn-outline:hover { background: var(--green-lt); transform: translateY(-2px); }
+    .btn svg { width: 17px; height: 17px; fill: currentColor; }
+
+    /* ---- KICKER / LABEL ---- */
+    .kicker {
+      display: inline-block;
+      font-size: .75rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    /* ---- HERO ---- */
+    .hero { padding: 72px 0 56px; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.1fr .9fr;
+      gap: 52px; align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      color: var(--text); margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: italic; color: var(--green-dk); }
+    .hero-desc { font-size: 1.05rem; color: var(--muted); margin-bottom: 34px; max-width: 500px; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill {
+      padding: 7px 14px; border-radius: 999px;
+      background: #fff; border: 1px solid var(--line);
+      font-size: .85rem; color: var(--muted);
+      box-shadow: var(--sh-sm);
+    }
+
+    /* HERO CARD */
+    .hero-card {
+      background: var(--card); border-radius: var(--r-lg);
+      border: 1px solid var(--line); box-shadow: var(--sh);
+      overflow: hidden;
+    }
+    .hero-img {
+      aspect-ratio: 4/5; overflow: hidden;
+      background: var(--cream); position: relative;
+    }
+    /* FOTO: hero-principal
+       Cole sua foto entre as tags abaixo:
+       <img src="sua-foto.jpg" alt="Guirlanda Ordenarelle" style="width:100%;height:100%;object-fit:cover;" />
+    */
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+    .ph { /* placeholder — remova quando tiver foto */
+      width: 100%; height: 100%; min-height: 260px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 10px; color: var(--muted); text-align: center; padding: 20px;
+    }
+    .ph-icon { font-size: 2.4rem; opacity: .35; }
+    .ph p { font-size: .82rem; opacity: .55; line-height: 1.4; }
+    .hero-foot {
+      padding: 18px 22px;
+      border-top: 1px solid var(--line);
+      background: linear-gradient(180deg, #fffefb, #f8f2ea);
+    }
+    .hero-foot strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; color: var(--green-dk); display: block; margin-bottom: 3px;
+    }
+    .hero-foot span { font-size: .82rem; color: var(--muted); }
+
+    /* ---- BAND ---- */
+    .band {
+      background: var(--green); color: rgba(255,255,255,.92);
+      padding: 15px 28px; text-align: center;
+      font-size: .85rem; letter-spacing: .4px;
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 0;
+    }
+    .band-item { padding: 0 22px; border-right: 1px solid rgba(255,255,255,.25); }
+    .band-item:last-child { border-right: none; }
+
+    /* ---- SOBRE ---- */
+    .about { padding: 80px 0; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 36px; align-items: center; }
+    .about-img {
+      aspect-ratio: 3/4; border-radius: var(--r-lg);
+      overflow: hidden; background: var(--cream);
+      box-shadow: var(--sh);
+    }
+    /* FOTO: talita-stefani */
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+    .about-text h2 { font-size: clamp(1.9rem, 2.8vw, 2.8rem); margin-bottom: 16px; }
+    .about-text p { color: var(--muted); margin-bottom: 14px; }
+    .about-text p:last-of-type { margin-bottom: 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .tag {
+      padding: 7px 14px; border-radius: 999px;
+      background: var(--green-lt); color: var(--green-dk);
+      font-size: .84rem; font-weight: 600;
+      border: 1px solid #c0d4ba;
+    }
+
+    /* ---- PRODUTOS ---- */
+    .produtos { padding: 80px 0; background: var(--cream); }
+    .sec-head { margin-bottom: 44px; }
+    .sec-head h2 { font-size: clamp(1.8rem, 3vw, 2.7rem); margin-bottom: 10px; }
+    .sec-head p { color: var(--muted); max-width: 520px; }
+    .prod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .prod-card {
+      background: var(--card); border-radius: var(--r-lg);
+      border: 1px solid var(--line); box-shadow: var(--sh);
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .prod-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(54,46,39,.13); }
+    .prod-img {
+      aspect-ratio: 4/3; overflow: hidden;
+      background: var(--cream); position: relative;
+    }
+    /* FOTO: produto-guirlanda / produto-escapulario / produto-personalizado */
+    .prod-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .prod-card:hover .prod-img img { transform: scale(1.05); }
+    .prod-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .prod-label {
+      font-size: .72rem; font-weight: 600; letter-spacing: 1.3px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+    }
+    .prod-body h3 {
+      font-size: 1.3rem; margin-bottom: 10px;
+    }
+    .prod-body p { color: var(--muted); font-size: .93rem; flex: 1; margin-bottom: 18px; }
+    .prod-btn {
+      align-self: flex-start;
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--green); color: #fff;
+      padding: 10px 20px; border-radius: 999px;
+      font-size: .86rem; font-weight: 600;
+      transition: background .2s; white-space: nowrap;
+    }
+    .prod-btn:hover { background: var(--green-dk); }
+
+    /* ---- DIFERENCIAIS ---- */
+    .diferenciais { padding: 80px 0; }
+    .feat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .feat-card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--r); padding: 28px 22px;
+      box-shadow: var(--sh-sm);
+    }
+    .feat-icon { font-size: 1.9rem; margin-bottom: 14px; }
+    .feat-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .feat-card p { font-size: .9rem; color: var(--muted); }
+
+    /* ---- GALERIA ---- */
+    .galeria { padding: 80px 0; background: var(--cream); }
+    .gal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 260px 260px;
+      gap: 18px;
+    }
+    .gal-item {
+      border-radius: var(--r); overflow: hidden;
+      background: var(--card); border: 1px solid var(--line);
+      box-shadow: var(--sh-sm);
+      transition: transform .3s;
+      position: relative;
+      height: 260px;
+    }
+    .gal-item:hover { transform: scale(1.02); }
+    .gal-item.featured {
+      grid-column: 1;
+      grid-row: 1 / 3;
+      height: 538px; /* 260 + 260 + 18 (gap) */
+    }
+    /* FOTO: galeria-1 até galeria-5 */
+    .gal-item img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ---- DEPOIMENTOS ---- */
+    .depoimentos { padding: 80px 0; }
+    .dep-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .dep-card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--r); padding: 28px;
+      box-shadow: var(--sh-sm);
+    }
+    .stars { color: var(--gold); letter-spacing: 3px; font-size: .9rem; margin-bottom: 14px; }
+    .dep-card blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-size: 1.1rem;
+      color: var(--text); line-height: 1.6; margin-bottom: 16px;
+    }
+    .dep-name { font-size: .88rem; font-weight: 600; color: var(--green-dk); }
+
+    /* ---- FAQ ---- */
+    .faq { padding: 80px 0; background: var(--cream); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .faq-card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--r); padding: 26px;
+      box-shadow: var(--sh-sm);
+    }
+    .faq-card h3 { font-size: 1.08rem; margin-bottom: 8px; }
+    .faq-card p { font-size: .92rem; color: var(--muted); }
+
+    /* ---- CONTATO ---- */
+    .contato { padding: 80px 0; }
+    .contato-box {
+      background: var(--green); border-radius: var(--r-lg);
+      padding: 60px 56px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+      align-items: center;
+    }
+    .contato-box h2 { color: #fff; font-size: clamp(1.8rem, 2.8vw, 2.8rem); margin-bottom: 16px; }
+    .contato-box > div > p { color: rgba(255,255,255,.78); margin-bottom: 22px; }
+    .contato-info { display: flex; flex-direction: column; gap: 10px; }
+    .contato-info span { color: rgba(255,255,255,.7); font-size: .92rem; }
+    .contato-info strong { color: #fff; }
+    .contato-panel {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: var(--r-lg); padding: 32px;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .contato-panel h3 { color: #fff; font-size: 1.4rem; }
+    .contato-panel p { color: rgba(255,255,255,.72); font-size: .92rem; }
+    .btn-white {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: #fff; color: var(--green-dk);
+      padding: 15px 26px; border-radius: 999px;
+      font-family: 'Jost', sans-serif; font-weight: 700; font-size: .95rem;
+      width: 100%; transition: transform .2s;
+      box-shadow: 0 6px 22px rgba(0,0,0,.14);
+    }
+    .btn-white:hover { transform: translateY(-2px); }
+    .btn-white svg { width: 18px; height: 18px; fill: var(--green); }
+
+    /* ---- FOOTER ---- */
+    footer {
+      border-top: 1px solid var(--line);
+      background: #fff; padding: 30px 0 44px;
+    }
+    .foot-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .foot-brand strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+    }
+    .foot-brand p { font-size: .8rem; color: var(--muted); margin-top: 3px; }
+    .foot-right { font-size: .82rem; color: var(--muted); text-align: right; line-height: 1.7; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 980px) {
+      .hero-grid, .about-grid, .contato-box { grid-template-columns: 1fr; }
+      .hero-grid { gap: 32px; }
+      .contato-box { padding: 40px 28px; gap: 30px; }
+      .prod-grid, .feat-grid, .dep-grid, .faq-grid { grid-template-columns: 1fr 1fr; }
+      .gal-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gal-item.featured { grid-column: auto; grid-row: auto; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 620px) {
+      .prod-grid, .feat-grid, .dep-grid, .faq-grid, .gal-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.1rem; }
+      .wrap { padding: 0 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<header class="nav-bar">
+  <div class="wrap nav-inner">
+    <a href="#inicio" class="nav-brand">
+      <strong>Ordenarelle</strong>
+      <small>Guirlandas &amp; Escapulários Artesanais</small>
+    </a>
+    <nav class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/5511955779646?text=Olá,%20vim%20pelo%20site%20da%20Ordenarelle%20e%20quero%20saber%20mais" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">✦ Artesanato decorativo — por Talita Stefani</span>
+      <h1>Peças feitas à mão para deixar sua casa <em>ainda mais especial</em></h1>
+      <p class="hero-desc">Guirlandas e escapulários de porta únicos, artesanais e personalizados. A Ordenarelle transforma cuidado, beleza e delicadeza em peças que encantam logo no primeiro olhar.</p>
+      <div class="hero-btns">
+        <a class="btn btn-green" href="https://wa.me/5511955779646?text=Olá,%20vim%20pelo%20site%20da%20Ordenarelle%20e%20quero%20fazer%20um%20pedido" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Fazer pedido
+        </a>
+        <a class="btn btn-outline" href="#galeria">Ver galeria</a>
+      </div>
+      <div class="hero-pills">
+        <span class="pill">Feito à mão</span>
+        <span class="pill">Personalização</span>
+        <span class="pill">Todo o Brasil</span>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-img">
+        <!--
+        ╔══════════════════════════════════╗
+        ║  FOTO: foto principal da marca   ║
+        ║  1. Salve sua foto na mesma      ║
+        ║     pasta deste arquivo HTML     ║
+        ║  2. Apague o <div class="ph">   ║
+        ║  3. Cole o código abaixo:        ║
+        ║                                  ║
+        ║  <img src="NOME-DA-FOTO.jpg"    ║
+        ║   alt="Guirlanda Ordenarelle"   ║
+        ║   style="width:100%;height:     ║
+        ║   100%;object-fit:cover;" />    ║
+        ╚══════════════════════════════════╝
+        -->
+        <img src="foto-principal-da-marca.jpg" alt="Guirlanda Ordenarelle" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+      <div class="hero-foot">
+        <strong>Criado por Talita Stefani</strong>
+        <span>Artesanato com acabamento delicado e exclusivo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BAND ========== -->
+<div class="band">
+  <span class="band-item">✦ Feito à mão</span>
+  <span class="band-item">✦ Peças exclusivas</span>
+  <span class="band-item">✦ Personalização sob medida</span>
+  <span class="band-item">✦ Entrega em todo o Brasil</span>
+</div>
+
+<!-- ========== SOBRE ========== -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-img">
+      <!--
+      ╔══════════════════════════════════╗
+      ║  FOTO: foto da Talita Stefani    ║
+      ║  Apague o <div class="ph"> e    ║
+      ║  cole:                           ║
+      ║  <img src="talita.jpg"          ║
+      ║   alt="Talita Stefani"          ║
+      ║   style="width:100%;height:     ║
+      ║   100%;object-fit:cover;" />    ║
+      ╚══════════════════════════════════╝
+      -->
+      <img src="talita-stefani.jpg" alt="Talita Stefani" style="width:100%;height:100%;object-fit:cover;" />
+    </div>
+    <div class="about-text">
+      <span class="kicker">Quem somos</span>
+      <h2>Sobre a Ordenarelle</h2>
+      <p>A Ordenarelle nasceu para levar beleza, aconchego e personalidade para os lares através de peças artesanais feitas com carinho genuíno e sensibilidade estética.</p>
+      <p>Cada guirlanda e cada escapulário de porta é produzido à mão com atenção ao equilíbrio de cores, textura, composição e acabamento — resultando em peças que encantam e carregam presença.</p>
+      <p>Fundada por <strong>Talita Stefani</strong>, a marca valoriza o feito à mão, a personalização e a exclusividade em cada criação, transformando a entrada da sua casa em algo verdadeiramente especial.</p>
+      <div class="tags">
+        <span class="tag">Feito à mão</span>
+        <span class="tag">Peças exclusivas</span>
+        <span class="tag">Personalização</span>
+        <span class="tag">Presente especial</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRODUTOS ========== -->
+<section class="produtos" id="produtos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Coleções</span>
+      <h2>Produtos feitos para encantar</h2>
+      <p>Escolha a categoria ideal para sua casa, para presentear ou para criar algo personalizado do seu jeito.</p>
+    </div>
+    <div class="prod-grid">
+
+      <article class="prod-card">
+        <div class="prod-img">
+          <!--
+          FOTO: guirlanda decorativa
+          <img src="guirlanda.jpg" alt="Guirlanda decorativa"
+           style="width:100%;height:100%;object-fit:cover;" />
+          -->
+          <img src="guirlanda-decorativa.jpg" alt="Guirlanda decorativa" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="prod-body">
+          <div class="prod-label">Coleção assinatura</div>
+          <h3>Guirlandas decorativas</h3>
+          <p>Composições delicadas e exclusivas para valorizar a entrada da sua casa em qualquer época do ano.</p>
+          <a class="prod-btn" href="https://wa.me/5511955779646?text=Olá,%20quero%20saber%20mais%20sobre%20as%20guirlandas%20da%20Ordenarelle" target="_blank" rel="noopener">Pedir no WhatsApp →</a>
+        </div>
+      </article>
+
+      <article class="prod-card">
+        <div class="prod-img">
+          <!--
+          FOTO: escapulário de porta
+          <img src="escapulario.jpg" alt="Escapulário de porta"
+           style="width:100%;height:100%;object-fit:cover;" />
+          -->
+          <img src="escapulario-de-porta.jpg" alt="Escapulário de porta" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="prod-body">
+          <div class="prod-label">Peças delicadas</div>
+          <h3>Escapulários de porta</h3>
+          <p>Criações artesanais com charme, significado e acabamento especial para a decoração do seu lar.</p>
+          <a class="prod-btn" href="https://wa.me/5511955779646?text=Olá,%20quero%20saber%20mais%20sobre%20os%20escapulários%20da%20Ordenarelle" target="_blank" rel="noopener">Pedir no WhatsApp →</a>
+        </div>
+      </article>
+
+      <article class="prod-card">
+        <div class="prod-img">
+          <!--
+          FOTO: produto personalizado
+          <img src="personalizado.jpg" alt="Produto personalizado"
+           style="width:100%;height:100%;object-fit:cover;" />
+          -->
+          <img src="produto-personalizado.jpg" alt="Produto personalizado" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="prod-body">
+          <div class="prod-label">Sob medida</div>
+          <h3>Personalizados</h3>
+          <p>Criações exclusivas para combinar com seu estilo, ocasião especial ou ideia de presente perfeito.</p>
+          <a class="prod-btn" href="https://wa.me/5511955779646?text=Olá,%20quero%20fazer%20um%20pedido%20personalizado%20na%20Ordenarelle" target="_blank" rel="noopener">Pedir no WhatsApp →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== DIFERENCIAIS ========== -->
+<section class="diferenciais">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Por que escolher</span>
+      <h2>Diferenciais da marca</h2>
+      <p>Cada peça é pensada para transmitir beleza, exclusividade e cuidado artesanal em um nível diferente.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🤲</div>
+        <h3>Feito à mão</h3>
+        <p>Produção artesanal com atenção a cada detalhe e acabamento delicado em cada composição.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">💎</div>
+        <h3>Peças exclusivas</h3>
+        <p>Modelos com identidade própria, longe do visual comum ou padronizado.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🎨</div>
+        <h3>Personalização</h3>
+        <p>Criações ajustadas ao gosto, às cores e ao estilo de cada cliente.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🎁</div>
+        <h3>Ideal para presente</h3>
+        <p>Uma forma especial de presentear com charme, beleza e significado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GALERIA ========== -->
+<section class="galeria" id="galeria">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Galeria</span>
+      <h2>Inspirações e criações</h2>
+      <p>Cada peça tem uma história. Veja o cuidado e a beleza em cada detalhe.</p>
+    </div>
+    <div class="gal-grid">
+
+      <!-- FOTO DESTAQUE (maior, ocupa 2 linhas) -->
+      <div class="gal-item featured">
+        <!--
+        FOTO: galeria-1 (foto maior em destaque)
+        <img src="galeria-1.jpg" alt="Peça em destaque"
+         style="width:100%;height:100%;object-fit:cover;" />
+        -->
+        <img src="foto-galeria-1.jpg" alt="Peça em destaque" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+
+      <div class="gal-item">
+        <!--
+        FOTO: galeria-2
+        <img src="galeria-2.jpg" alt="Peça 2"
+         style="width:100%;height:100%;object-fit:cover;" />
+        -->
+        <img src="foto-galeria-2.jpg" alt="Peça 2" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+
+      <div class="gal-item">
+        <!--
+        FOTO: galeria-3
+        <img src="galeria-3.jpg" alt="Peça 3"
+         style="width:100%;height:100%;object-fit:cover;" />
+        -->
+        <img src="foto-galeria-3.jpg" alt="Peça 3" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+
+      <div class="gal-item">
+        <!--
+        FOTO: galeria-4
+        <img src="galeria-4.jpg" alt="Peça 4"
+         style="width:100%;height:100%;object-fit:cover;" />
+        -->
+        <img src="foto-galeria-4.jpg" alt="Peça 4" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+
+      <div class="gal-item">
+        <!--
+        FOTO: galeria-5
+        <img src="galeria-5.jpg" alt="Peça 5"
+         style="width:100%;height:100%;object-fit:cover;" />
+        -->
+        <img src="foto-galeria-5.jpg" alt="Peça 5" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== DEPOIMENTOS ========== -->
+<section class="depoimentos" id="depoimentos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Depoimentos</span>
+      <h2>Quem compra, se encanta</h2>
+    </div>
+    <div class="dep-grid">
+      <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"A guirlanda ficou ainda mais linda pessoalmente. Dá para ver o carinho em cada detalhe."</blockquote>
+        <span class="dep-name">— Mariana S.</span>
+      </div>
+      <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Comprei para presentear e foi um sucesso. Muito delicado e com acabamento impecável."</blockquote>
+        <span class="dep-name">— Juliana R.</span>
+      </div>
+      <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Atendimento atencioso, peça linda e personalizada do jeitinho que eu queria."</blockquote>
+        <span class="dep-name">— Camila T.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Dúvidas</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-card">
+        <h3>Como faço o pedido?</h3>
+        <p>Diretamente pelo WhatsApp. Clique em qualquer botão do site e envie sua mensagem — o atendimento é rápido e personalizado.</p>
+      </div>
+      <div class="faq-card">
+        <h3>Vocês personalizam?</h3>
+        <p>Sim! A Ordenarelle trabalha com personalização para deixar a peça do jeitinho que você deseja.</p>
+      </div>
+      <div class="faq-card">
+        <h3>Qual o prazo de entrega?</h3>
+        <p>O prazo varia conforme o modelo e a personalização — você recebe essa informação no atendimento pelo WhatsApp.</p>
+      </div>
+      <div class="faq-card">
+        <h3>Entregam na minha região?</h3>
+        <p>A Ordenarelle atende clientes em todo o Brasil, com foco em vendas online e atendimento local.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTATO ========== -->
+<section class="contato" id="contato">
+  <div class="wrap">
+    <div class="contato-box">
+      <div>
+        <h2>Faça seu pedido com atendimento direto</h2>
+        <p>Quer uma peça pronta ou algo personalizado? Fale agora com a Ordenarelle pelo WhatsApp.</p>
+        <div class="contato-info">
+          <span><strong>Criadora:</strong> Talita Stefani</span>
+          <span><strong>Instagram:</strong> @ordenarelle</span>
+          <span><strong>CNPJ:</strong> 67.116.899/0001-10</span>
+          <span><strong>WhatsApp:</strong> (11) 95577-9646</span>
+        </div>
+      </div>
+      <div class="contato-panel">
+        <h3>Atendimento rápido e personalizado</h3>
+        <p>Clique abaixo para enviar uma mensagem e falar sobre preços, modelos, personalização e entrega.</p>
+        <a class="btn-white" href="https://wa.me/5511955779646?text=Olá,%20vim%20pelo%20site%20da%20Ordenarelle%20e%20quero%20saber%20mais" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Fazer pedido no WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="wrap foot-inner">
+    <div class="foot-brand">
+      <strong>Ordenarelle</strong>
+      <p>Guirlandas e escapulários feitos à mão</p>
+    </div>
+    <div class="foot-right">
+      Criado por <strong>Talita Stefani</strong><br>
+      @ordenarelle · (11) 95577-9646<br>
+      CNPJ: 67.116.899/0001-10
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
