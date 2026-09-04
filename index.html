@@ -108,7 +108,7 @@
   }
   .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:92px;}
   .nav-brand{display:flex;align-items:center;}
-  .nav-logo{height:50px;width:auto;display:block;flex-shrink:0;}
+  .nav-logo{width:250px;height:auto;display:block;flex-shrink:0;}
   .nav-links{display:flex;align-items:center;gap:38px;}
   .nav-links a{
     font-size:.78rem;letter-spacing:1.4px;text-transform:uppercase;
@@ -158,7 +158,7 @@
 
   /* ---- selo compra segura ---- */
   .trust-badge{
-    position:fixed;right:28px;top:50%;transform:translateY(-50%);
+    position:absolute;right:18px;top:100px;
     z-index:150;width:88px;
   }
   .trust-badge img{
@@ -241,6 +241,13 @@
   }
   .duo-union h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.7rem;color:var(--sage-deep);margin-bottom:16px;}
   .duo-union p{color:var(--ink-soft);margin-bottom:14px;}
+
+  /* ---- foto Talita & Joana juntas ---- */
+  .duo-photo{
+    margin:28px auto 34px;max-width:480px;width:100%;
+    border-radius:6px;overflow:hidden;box-shadow:var(--sh-sm);
+  }
+  .duo-photo img{width:100%;height:auto;display:block;object-fit:cover;object-position:top center;}
 
   .people-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;}
   .person{display:flex;flex-direction:column;}
@@ -368,15 +375,15 @@
   }
   @media (max-width:620px){
     .wrap{padding:0 22px;}
-    .nav-logo{height:36px;}
+    .nav-logo{width:205px;height:auto;}
     .hero h1{font-size:2.35rem;}
     .col-grid{grid-template-columns:1fr;}
     .foot-top{grid-template-columns:1fr;}
     .hero-tag{position:static;margin-top:-6px;max-width:none;}
     .duo-union{margin-top:64px;padding-top:44px;}
     .trust-badge{
-      position:static;transform:none;width:76px;
-      margin:22px auto 0;display:flex;justify-content:center;
+      position:absolute;top:88px;right:12px;width:64px;
+      margin:0;display:block;
     }
   }
 </style>
@@ -419,7 +426,7 @@
 
 <!-- Selo Compra Segura -->
 <div class="trust-badge">
-  <img src="compra-segura.jpg" alt="Compra Segura" />
+  <img src="compra-segura.png" alt="Compra Segura" />
 </div>
 
 <!-- ========== HERO ========== -->
@@ -437,20 +444,7 @@
       </div>
     </div>
     <div class="hero-media reveal">
-      <!--
-      FOTO: hero principal
-      Quando tiver a fotografia definitiva, substitua o bloco
-      <div class="ph-elegant">...</div> por:
-      <img src="sua-foto.jpg" alt="Peça artesanal Ordenarelle" />
-      -->
-      <div class="ph-elegant">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10" r="1.5"/><path d="M3 16l5-4 4 3 4-5 5 6"/></svg>
-        <span>Fotografia principal<br>em breve</span>
-      </div>
-      <div class="hero-tag">
-        <strong>Feito por Talita Stefani</strong>
-        <span>Acabamento artesanal</span>
-      </div>
+      <img src="produto-01.jpg" alt="Peça artesanal Ordenarelle" style="object-position:center 35%;" />
     </div>
   </div>
 </section>
@@ -459,15 +453,7 @@
 <section class="section" id="sobre">
   <div class="wrap conceito-grid">
     <div class="conceito-media reveal">
-      <!--
-      FOTO: peça em destaque (conceito)
-      Substitua o bloco <div class="ph-elegant">...</div> por:
-      <img src="sua-foto.jpg" alt="Detalhe de peça artesanal Ordenarelle" />
-      -->
-      <div class="ph-elegant">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10" r="1.5"/><path d="M3 16l5-4 4 3 4-5 5 6"/></svg>
-        <span>Fotografia em breve</span>
-      </div>
+      <img src="produto-02.jpg" alt="Detalhe de peça artesanal Ordenarelle" style="object-position:center 40%;" />
     </div>
     <div class="conceito-text reveal">
       <span class="eyebrow">
@@ -500,15 +486,7 @@
       <p>É esse cuidado que transforma um objeto em algo que faz parte da sua casa.</p>
     </div>
     <div class="artesanal-media reveal">
-      <!--
-      FOTO: cuidado artesanal
-      Substitua o bloco <div class="ph-elegant">...</div> por:
-      <img src="sua-foto.jpg" alt="Cuidado artesanal em cada peça Ordenarelle" />
-      -->
-      <div class="ph-elegant" style="border-color:rgba(244,239,230,.3);background:rgba(244,239,230,.06);">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1" style="stroke:rgba(244,239,230,.65);opacity:.6;"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10" r="1.5"/><path d="M3 16l5-4 4 3 4-5 5 6"/></svg>
-        <span style="color:rgba(244,239,230,.75);">Fotografia em breve</span>
-      </div>
+      <img src="produto-03.jpg" alt="Cuidado artesanal em cada peça Ordenarelle" style="object-position:center 25%;" />
     </div>
   </div>
 </section>
@@ -528,15 +506,7 @@
     <div class="people-grid">
       <div class="person reveal">
         <div class="person-media">
-          <!--
-          FOTO: Talita
-          Substitua o bloco <div class="ph-elegant person-placeholder">...</div> por:
-          <img src="sua-foto.jpg" alt="Talita, fundadora da Ordenarelle" />
-          -->
-          <div class="ph-elegant person-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1.6-4 4-5.6 7.5-5.6s5.9 1.6 7.5 5.6"/></svg>
-            <span>Fotografia de Talita<br>em breve</span>
-          </div>
+          <img src="talita-01.jpg" alt="Talita, fundadora da Ordenarelle" style="object-position:center 20%;" />
         </div>
         <h3>Talita</h3>
         <span class="role">Fundadora e responsável pelas criações</span>
@@ -546,16 +516,7 @@
 
       <div class="person reveal">
         <div class="person-media">
-          <!--
-          FOTO: Joana — ainda não disponível.
-          Quando tiver a foto, salve-a na mesma pasta deste arquivo
-          e substitua o bloco <div class="person-placeholder"> por:
-          <img src="joana.jpg" alt="Joana, parceira da Ordenarelle" />
-          -->
-          <div class="ph-elegant person-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1.6-4 4-5.6 7.5-5.6s5.9 1.6 7.5 5.6"/></svg>
-            <span>Fotografia de Joana<br>em breve</span>
-          </div>
+          <img src="joana-01.jpg" alt="Joana, parceira da Ordenarelle" style="object-position:center 15%;" />
         </div>
         <h3>Joana</h3>
         <span class="role">&nbsp;</span>
@@ -566,6 +527,9 @@
 
     <div class="duo-union reveal">
       <h3>Talita &amp; Joana</h3>
+      <div class="duo-photo">
+        <img src="talita-joana.jpg" alt="Talita e Joana, da Ordenarelle" />
+      </div>
       <p>A parceria entre Talita e Joana nasce do encontro entre o fazer artesanal e o olhar para os ambientes.</p>
       <p>Juntas, elas buscam criar peças que ultrapassem a função decorativa, levando beleza, aconchego e personalidade para dentro de casa.</p>
     </div>
@@ -607,15 +571,7 @@
       <p class="processo-final">Do primeiro detalhe ao último acabamento, tudo passa pelas nossas mãos.</p>
     </div>
     <div class="processo-media reveal">
-      <!--
-      FOTO: etapas do processo
-      Substitua o bloco <div class="ph-elegant">...</div> por:
-      <img src="sua-foto.jpg" alt="Processo artesanal Ordenarelle" />
-      -->
-      <div class="ph-elegant">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10" r="1.5"/><path d="M3 16l5-4 4 3 4-5 5 6"/></svg>
-        <span>Fotografia em breve</span>
-      </div>
+      <img src="produto-04.jpg" alt="Processo artesanal Ordenarelle" style="object-position:center 30%;" />
     </div>
   </div>
 </section>
