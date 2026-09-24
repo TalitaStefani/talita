@@ -302,10 +302,29 @@
   .col-media{aspect-ratio:3/4;overflow:hidden;position:relative;}
   .col-media img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease);}
   .col-card:hover .col-media img{transform:scale(1.06);}
+
+  /* ---- botão WhatsApp sobre cada coleção ---- */
+  .col-wa-btn{
+    position:absolute;left:50%;bottom:16px;transform:translateX(-50%);
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--sage-deep);color:#fff;
+    font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.02em;
+    padding:10px 18px;border-radius:6px;white-space:nowrap;
+    text-decoration:none;z-index:2;
+    box-shadow:0 6px 18px rgba(51,42,32,.22);
+    transition:background .3s var(--ease), transform .3s var(--ease);
+  }
+  .col-wa-btn svg{width:14px;height:14px;fill:#fff;flex-shrink:0;}
+  .col-wa-btn:hover{background:var(--ink);transform:translateX(-50%) translateY(-2px);}
   .col-body{padding:28px 24px 32px;}
   .col-body .eyebrow{margin-bottom:10px;font-size:.65rem;}
   .col-body h3{font-size:1.32rem;margin-bottom:10px;}
   .col-body p{color:var(--ink-soft);font-size:.9rem;}
+
+  /* ---- título da coleção com ícone ---- */
+  .collection-title-row{display:flex;align-items:center;gap:9px;margin-bottom:10px;}
+  .collection-title-row .collection-name{margin-bottom:0;}
+  .collection-icon{font-size:1.05rem;line-height:1;display:inline-flex;flex-shrink:0;transform:translateY(-1px);}
   .col-cta{display:flex;justify-content:center;margin-top:56px;}
 
   /* ---- CHAMADA FINAL + CONTATO ---- */
@@ -590,77 +609,73 @@
     <div class="col-grid reveal">
       <article class="col-card">
         <div class="col-media">
-          <!--
-          FOTO: coleção clássicos
-          Substitua o bloco <div class="ph-elegant">...</div> por:
-          <img src="sua-foto.jpg" alt="Coleção Clássicos Ordenarelle" />
-          -->
-          <div class="ph-elegant" style="border:none;">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10" r="1.5"/><path d="M3 16l5-4 4 3 4-5 5 6"/></svg>
-            <span>Fotografia em breve</span>
-          </div>
+          <img src="natal.jpg" alt="Coleção Natal Ordenarelle" style="object-position:center 22%;" />
+          <a class="col-wa-btn" href="https://wa.me/5511955779646?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20as%20pe%C3%A7as%20da%20cole%C3%A7%C3%A3o%20Natal%20da%20Ordenarelle." target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Consultar no WhatsApp
+          </a>
         </div>
         <div class="col-body">
           <span class="eyebrow">Coleção</span>
-          <h3>Clássicos</h3>
-          <p>Modelos atemporais que combinam com todos os estilos.</p>
+          <div class="collection-title-row">
+            <span class="collection-icon" aria-hidden="true">🎄</span>
+            <h3 class="collection-name">Natal</h3>
+          </div>
+          <p>Peças que traduzem o encanto, a tradição e a magia de celebrar.</p>
         </div>
       </article>
 
       <article class="col-card">
         <div class="col-media">
-          <!--
-          FOTO: coleção natureza
-          Substitua o bloco <div class="ph-elegant">...</div> por:
-          <img src="sua-foto.jpg" alt="Coleção Natureza Ordenarelle" />
-          -->
-          <div class="ph-elegant" style="border:none;">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10" r="1.5"/><path d="M3 16l5-4 4 3 4-5 5 6"/></svg>
-            <span>Fotografia em breve</span>
-          </div>
+          <img src="halloween.jpg" alt="Coleção Halloween Ordenarelle" style="object-position:center 28%;" />
+          <a class="col-wa-btn" href="https://wa.me/5511955779646?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20as%20pe%C3%A7as%20da%20cole%C3%A7%C3%A3o%20Halloween%20da%20Ordenarelle." target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Consultar no WhatsApp
+          </a>
         </div>
         <div class="col-body">
           <span class="eyebrow">Coleção</span>
-          <h3>Natureza</h3>
-          <p>Elementos naturais que trazem leveza e frescor.</p>
+          <div class="collection-title-row">
+            <span class="collection-icon" aria-hidden="true">🎃</span>
+            <h3 class="collection-name">Halloween</h3>
+          </div>
+          <p>Peças que trazem personalidade, encanto e um toque de mistério à decoração.</p>
         </div>
       </article>
 
       <article class="col-card">
         <div class="col-media">
-          <!--
-          FOTO: coleção fé
-          Substitua o bloco <div class="ph-elegant">...</div> por:
-          <img src="sua-foto.jpg" alt="Coleção Fé Ordenarelle" />
-          -->
-          <div class="ph-elegant" style="border:none;">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10" r="1.5"/><path d="M3 16l5-4 4 3 4-5 5 6"/></svg>
-            <span>Fotografia em breve</span>
-          </div>
+          <img src="atemporais.jpg" alt="Coleção Atemporais Ordenarelle" />
+          <a class="col-wa-btn" href="https://wa.me/5511955779646?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20as%20pe%C3%A7as%20da%20cole%C3%A7%C3%A3o%20Atemporais%20da%20Ordenarelle." target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Consultar no WhatsApp
+          </a>
         </div>
         <div class="col-body">
           <span class="eyebrow">Coleção</span>
-          <h3>Fé</h3>
-          <p>Peças que traduzem proteção, espiritualidade e significado.</p>
+          <div class="collection-title-row">
+            <span class="collection-icon" aria-hidden="true">🤍</span>
+            <h3 class="collection-name">Atemporais</h3>
+          </div>
+          <p>Peças que atravessam as estações e revelam beleza, elegância e personalidade em cada detalhe.</p>
         </div>
       </article>
 
       <article class="col-card">
         <div class="col-media">
-          <!--
-          FOTO: coleção celebrações
-          Substitua o bloco <div class="ph-elegant">...</div> por:
-          <img src="sua-foto.jpg" alt="Coleção Celebrações Ordenarelle" />
-          -->
-          <div class="ph-elegant" style="border:none;">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10" r="1.5"/><path d="M3 16l5-4 4 3 4-5 5 6"/></svg>
-            <span>Fotografia em breve</span>
-          </div>
+          <img src="pascoa.jpg" alt="Coleção Páscoa Ordenarelle" />
+          <a class="col-wa-btn" href="https://wa.me/5511955779646?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20as%20pe%C3%A7as%20da%20cole%C3%A7%C3%A3o%20P%C3%A1scoa%20da%20Ordenarelle." target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Consultar no WhatsApp
+          </a>
         </div>
         <div class="col-body">
           <span class="eyebrow">Coleção</span>
-          <h3>Celebrações</h3>
-          <p>Para marcar momentos especiais e tornar cada data inesquecível.</p>
+          <div class="collection-title-row">
+            <span class="collection-icon" aria-hidden="true">🐰</span>
+            <h3 class="collection-name">Páscoa</h3>
+          </div>
+          <p>Peças que celebram a renovação, a delicadeza e a alegria de receber a Páscoa em casa.</p>
         </div>
       </article>
     </div>
